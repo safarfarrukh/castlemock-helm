@@ -69,7 +69,7 @@ ingress:
   #      - chart-example.local
 
 httpRoute:
-  enabled: false
+  enabled: true
   httpRoutename: castlemock-route
   gatewayName: proceedo-gateway
   refGrantName: castlemock-gateway-ref
