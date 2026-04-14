@@ -1,0 +1,17 @@
+{{- $httpRoute := .Values.httpRoute | default dict -}}
+{{- if and ($httpRoute.enabled | default false) ($httpRoute.createReferenceGrant | default false) -}}
+---
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: ReferenceGrant
+metadata:
+  name: {{ $httpRoute.refGrantName }}
+  namespace: nginx-gateway
+spec:
+  from:
+  - group: gateway.networking.k8s.io
+    kind: HTTPRoute
+    namespace: {{ $httpRoute.namespace }}
+  to:
+  - group: gateway.networking.k8s.io
+    kind: Gateway
+{{- end }}
