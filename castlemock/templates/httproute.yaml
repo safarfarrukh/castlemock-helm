@@ -7,7 +7,7 @@ metadata:
 spec:
   parentRefs:
   - name: {{ .Values.httpRoute.gatewayName }}
-    namespace: nginx-gateway
+    namespace: envoy-gateway-system
     sectionName: {{ .Values.httpRoute.sectionName }}
   hostnames:
   {{- range .Values.httpRoute.hostnames }}

@@ -71,7 +71,7 @@ ingress:
 httpRoute:
   enabled: true
   httpRoutename: castlemock-route
-  gatewayName: proceedo-gateway
+  gatewayName: envoy-proceedo-gateway
   refGrantName: castlemock-gateway-ref
   namespace: castlemock
   sectionName: https
