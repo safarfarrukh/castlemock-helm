@@ -8,7 +8,9 @@ spec:
   parentRefs:
   - name: {{ .Values.httpRoute.gatewayName }}
     namespace: envoy-gateway-system
-    sectionName: {{ .Values.httpRoute.sectionName }}
+    {{- with .Values.httpRoute.sectionName }}
+    sectionName: {{ . }}
+    {{- end }}
   hostnames:
   {{- range .Values.httpRoute.hostnames }}
   - {{ . | quote }}

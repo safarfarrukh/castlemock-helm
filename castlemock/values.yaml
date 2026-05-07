@@ -74,7 +74,6 @@ httpRoute:
   gatewayName: envoy-proceedo-gateway
   refGrantName: castlemock-gateway-ref
   namespace: castlemock
-  sectionName: https
   backEndRefName: test-castlemock
   annotations: {}
   hostnames:
